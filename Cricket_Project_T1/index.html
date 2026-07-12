@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Academy - Master Your Skills</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===================== HEADER ===================== -->
+    <header>
+        <nav>
+            <div class="logo">🏏 Taha Cricket Club</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Players</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <!-- Hamburger menu icon for mobile (will be shown via CSS) -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Master Your <span>Cricket</span> Skills</h1>
+                <p>Train like a pro. Play like a legend. Join the best cricket academy in town.</p>
+                <button id="joinBtn">Join Now</button>
+            </div>
+            <div class="hero-image">
+                <!-- Cricket emoji as placeholder image -->
+                <div class="image-placeholder">🏏</div>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🏏</div>
+                <h3>Pro Training</h3>
+                <p>Learn from experienced coaches with modern techniques.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>Match Highlights</h3>
+                <p>Watch and analyze matches to improve your game.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛒</div>
+                <h3>Exclusive Merch</h3>
+                <p>Get premium cricket gear and team merchandise.</p>
+            </div>
+        </section>
+
+        <!-- PLAYER STATS SECTION (Extra content) -->
+        <section class="players-section">
+            <h2>Our Star Players</h2>
+            <div class="players-grid">
+                <div class="player-card">
+                    <div class="player-avatar">👤</div>
+                    <h4>Virat Kohli</h4>
+                    <p>Batsman • Runs: 17358 Average: 48.5</p>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">👤</div>
+                    <h4>Taha Nawab</h4>
+                    <p>Bowler • Wickets: 145<br>
+			Batsman • Runs: 12147 Avg 58.08
+						
+							</p>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">👤</div>
+                    <h4>Babar Azam</h4>
+                    <p>Batsman • Runs: 16459 Avg: 56.90 Catches: 89</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>🏏 Cricket Club</h4>
+                <p>Building champions since 2020</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📞 +00 00000 0000</p>
+                <p>📧 cricket@tahaacademy.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p>Instagram | YouTube | Twitter</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Taha Cricket Club.</p>
+        </div>
+    </footer>
+
+    <!-- ===================== JAVASCRIPT ===================== -->
+    <script>
+        // 1. Button click alert
+        document.getElementById('joinBtn').addEventListener('click', function() {
+            alert('🎉 Welcome to Taha Cricket Club! We\'ll contact you soon.');
+        });
+
+        // 2. Hamburger menu toggle (for mobile)
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

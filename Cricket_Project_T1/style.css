@@ -1,0 +1,377 @@
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F2F0EA;  /* Warm beige from PDF */
+    color: #2D2D2D;
+    padding: 20px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+span {
+    color: #6B4F3A;  /* Mocha Mousse - warm brown */
+}
+
+/* ========================================
+   MOBILE FIRST (Default - Single Column)
+   ======================================== */
+
+/* ----- Navigation ----- */
+header {
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #6B4F3A;
+}
+
+.nav-links {
+    display: none;  /* Hidden on mobile by default */
+    flex-direction: column;
+    width: 100%;
+    list-style: none;
+    padding: 20px 0;
+    gap: 15px;
+}
+
+.nav-links.active {
+    display: flex;  /* Show when hamburger clicked */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2D2D2D;
+    font-weight: 700;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.nav-links a:hover {
+    border-bottom-color: #6B4F3A;
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #2D2D2D;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* ----- Hero Section (Mobile) ----- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 0 30px 0;
+    gap: 30px;
+}
+
+.hero-text h1 {
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+}
+
+.hero-text button {
+    background-color: #6B4F3A;  /* Mocha Mousse */
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.hero-text button:hover {
+    background-color: #5A3F2E;
+    transform: scale(1.05);
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 300px;
+}
+
+.image-placeholder {
+    background: linear-gradient(135deg, #6B4F3A, #8B6F5A);
+    color: white;
+    font-size: 6rem;
+    padding: 60px 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* ----- Features Section (Mobile) ----- */
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 0;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.feature-card h3 {
+    margin-bottom: 8px;
+    color: #6B4F3A;
+}
+
+.feature-card p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ----- Players Section (Mobile) ----- */
+.players-section {
+    padding: 40px 0;
+}
+
+.players-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.player-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.player-avatar {
+    font-size: 3rem;
+    margin-bottom: 8px;
+}
+
+.player-card h4 {
+    color: #2D2D2D;
+    margin-bottom: 4px;
+}
+
+.player-card p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* ----- Footer (Mobile) ----- */
+footer {
+    padding: 30px 0 15px 0;
+    border-top: 2px solid #ddd;
+    margin-top: 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+}
+
+.footer-section h4 {
+    color: #6B4F3A;
+    margin-bottom: 8px;
+}
+
+.footer-section p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+    color: #999;
+    font-size: 0.85rem;
+}
+
+
+/* ========================================
+   TABLET (768px and above)
+   ======================================== */
+@media (min-width: 768px) {
+    body {
+        padding: 40px;
+    }
+
+    /* Show nav links normally on tablet */
+    .nav-links {
+        display: flex !important;
+        flex-direction: row;
+        width: auto;
+        padding: 0;
+        gap: 30px;
+    }
+
+    .nav-links a {
+        border-bottom: none;
+        padding: 0;
+    }
+
+    .hamburger {
+        display: none !important;  /* Hide hamburger on tablet+ */
+    }
+
+    /* Hero - side by side */
+    .hero {
+        flex-direction: row;
+        text-align: left;
+        gap: 50px;
+        padding: 50px 0;
+    }
+
+    .hero-text {
+        flex: 1;
+    }
+
+    .hero-text p {
+        margin: 0 0 20px 0;
+    }
+
+    .hero-image {
+        flex: 1;
+        max-width: 350px;
+    }
+
+    /* Features - 3 columns */
+    .features {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .feature-card {
+        flex: 1;
+        min-width: 200px;
+        max-width: 280px;
+    }
+
+    /* Players - 3 columns */
+    .players-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .player-card {
+        flex: 1;
+        min-width: 150px;
+        max-width: 220px;
+    }
+
+    /* Footer - 3 columns */
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+    }
+}
+
+
+/* ========================================
+   DESKTOP (1024px and above)
+   ======================================== */
+@media (min-width: 1024px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 50px;
+    }
+
+    .hero {
+        gap: 80px;
+        padding: 70px 0;
+    }
+
+    .hero-image {
+        max-width: 400px;
+    }
+
+    .feature-card {
+        padding: 40px 25px;
+        max-width: 320px;
+    }
+
+    .player-card {
+        padding: 30px;
+        max-width: 250px;
+    }
+
+    .player-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        transition: all 0.3s;
+    }
+}
