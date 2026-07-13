@@ -1,0 +1,127 @@
+<!DOCTYPE document>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Club Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand" onclick="showPage('home')">🏏 Cricket Club</div>
+        <div class="nav-links">
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('players')">Players</a>
+            <a href="#" onclick="showPage('profile')" id="profileLink" style="display: none;">Profile</a>
+            <a href="#" onclick="handleAuth()" id="authLink">Login</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Home Page -->
+        <section id="home-page" class="page active">
+            <div class="hero">
+                <h1>Welcome to the Cricket Club Management System</h1>
+                <p>Manage your players, track statistics, and organize your team effectively.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="showPage('players')">View Players</button>
+                    <button class="btn-secondary" onclick="handleAuth()" id="heroAuthBtn">Login to Manage</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Players Page -->
+        <section id="players-page" class="page">
+            <div class="page-header">
+                <h2>Our Players</h2>
+                <button class="btn-primary" onclick="showAddPlayerForm()">+ Add Player</button>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search players by name or team..." oninput="searchPlayers(this.value)">
+            </div>
+            
+            <div id="players-container" class="grid-container">
+                <!-- Players will be rendered here -->
+            </div>
+        </section>
+
+        <!-- Profile Page -->
+        <section id="profile-page" class="page">
+            <div class="page-header">
+                <h2>My Profile</h2>
+            </div>
+            <div id="profile-container" class="profile-container">
+                <!-- Profile details will be rendered here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Authentication Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('auth-modal')">&times;</span>
+            <h2 id="auth-title">Login</h2>
+            <form id="auth-form">
+                <div id="auth-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="auth-name">Full Name</label>
+                        <input type="text" id="auth-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="auth-age">Age</label>
+                        <input type="number" id="auth-age" min="18">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="auth-email">Email</label>
+                    <input type="email" id="auth-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="auth-password">Password</label>
+                    <input type="password" id="auth-password" required>
+                </div>
+                <button type="submit" id="auth-submit" class="btn-primary w-100">Login</button>
+            </form>
+            <p class="auth-toggle"><a href="#" id="auth-toggle" onclick="toggleAuthMode()">Don't have an account? Register</a></p>
+        </div>
+    </div>
+
+    <!-- Add/Edit Player Modal -->
+    <div id="add-player-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('add-player-modal')">&times;</span>
+            <h2 id="player-modal-title">Add New Player</h2>
+            <form id="add-player-form">
+                <input type="hidden" id="player-id">
+                <div class="form-group">
+                    <label for="player-name">Name</label>
+                    <input type="text" id="player-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="player-age">Age</label>
+                    <input type="number" id="player-age" required min="18" max="50">
+                </div>
+                <div class="form-group">
+                    <label for="player-role">Role</label>
+                    <select id="player-role" required>
+                        <option value="">Select Role...</option>
+                        <option value="Batsman">Batsman</option>
+                        <option value="Bowler">Bowler</option>
+                        <option value="All-rounder">All-rounder</option>
+                        <option value="Wicketkeeper">Wicketkeeper</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="player-team">Team</label>
+                    <input type="text" id="player-team" required>
+                </div>
+                <button type="submit" class="btn-primary w-100">Save Player</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
